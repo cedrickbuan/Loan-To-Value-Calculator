@@ -1,0 +1,35 @@
+@import "../Variables/Variables.scss";
+
+.loan-result-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+    .loan-result {
+        border: 1px solid white;
+        padding: 20px;
+        background-color: white;
+        border-radius: 11px;
+        box-shadow: -1px 0px 6px gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+
+        .total {
+            color: $blue;
+            font-size: 60px;
+            padding: 20px;
+        }
+
+        .breakdown-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-size: 14px;
+            color: $defaultFontColor;
+        }
+    }
+}

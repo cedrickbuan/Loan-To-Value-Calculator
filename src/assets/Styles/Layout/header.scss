@@ -1,0 +1,13 @@
+@import "../Variables/Variables.scss";
+
+.page-header {
+    background-color: white;
+    height: 50px;
+    padding: 5px 10px;
+    max-height: 80px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 1px 1px 3px gray;
+    display: flex;
+    align-items: center;
+    font-family: $defaultFont;
+}

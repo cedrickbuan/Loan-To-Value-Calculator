@@ -1,0 +1,18 @@
+@import "../Variables/Variables.scss";
+
+.main-page {
+    background-color: $mainPageBackgroundColor;
+    height: 100vh;
+    font-family: $defaultFont;
+
+    .loan-form-section {
+        max-width: 800px;
+        // border: 1px solid black;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 45px;
+        background-color: $formBackgroundColor;
+        box-shadow: 0px 4px 6px gray;
+        border-radius: 10px;
+    }
+}

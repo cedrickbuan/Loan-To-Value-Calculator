@@ -1,0 +1,52 @@
+@import "../Variables/Variables.scss";
+
+
+.loan-form-container {
+    font-family: $defaultFont;
+    width: 50%;
+    padding: 20px;
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-family: $defaultFont;
+    }
+
+    button {
+        background-color: white;
+        border: none;
+        color: $defaultFontColor;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: 1px solid $defaultFontColor;
+    }
+
+    .primary-button:hover {
+        background-color: $defaultFontColor;
+        color: white;
+    }
+
+    label {
+        font-size: 14px;
+        color: $defaultFontColor;
+    }
+
+    .form-field {
+        margin-bottom: 30px;
+    }
+
+    .form-title {
+        color: $defaultFontColor;
+        font-size: 17px;
+    }
+
+
+
+}
