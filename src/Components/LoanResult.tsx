@@ -7,6 +7,11 @@ interface Props {
     purchasePrice: string;
 }
 const LoanResult = ({ depositValue = '0', purchasePrice = '0' }: Props) => {
+    const addCommasToNumber = (numberString: string) => {
+        const numberWithoutCommas = numberString.replace(/,/g, "");
+        const numberWithCommas = numberWithoutCommas.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return numberWithCommas;
+    }
 
     const loanToValueQuery = gql(/* GraphQL */`
         query loanToValueCalc( $depositValue: Int!, $purchasePrice: Int!) {
@@ -29,8 +34,8 @@ const LoanResult = ({ depositValue = '0', purchasePrice = '0' }: Props) => {
             <div>Your loan to value result:</div>
             <div className='total'>{!error ? data.loanToValueCalc.result : '0%'}</div>
             <div className='breakdown-container'>
-                <div><span>Deposit Value</span><p>{depositValue}</p></div>
-                <div><span>Purchase Price</span><p>{purchasePrice}</p></div>
+                <div><span>Deposit Value</span><p>{addCommasToNumber(depositValue)}</p></div>
+                <div><span>Purchase Price</span><p>{addCommasToNumber(purchasePrice)}</p></div>
             </div>
         </div>
     )
