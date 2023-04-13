@@ -3,7 +3,7 @@ import "../assets/Styles/Layout/header.scss";
 const Header = () => {
     return (
         <div className='page-header'>
-            <div className='page-logo'>React Js Test</div>
+            <div className='page-logo'>LOAN TO VALUE CALCULATOR CREATED USING REACT JS</div>
             <div className='header-menu'></div>
         </div>
     )

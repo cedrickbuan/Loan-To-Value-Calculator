@@ -6,7 +6,6 @@ interface Props {
     onSubmitForm: (formDepositValue: string, formPurchaseValue: string) => void;
 }
 
-
 const LoanForm = ({ onSubmitForm }: Props) => {
     const [depositValue, setDepositValue] = useState('');
     const [purchagePrice, setPurchagePrice] = useState('');
@@ -15,20 +14,19 @@ const LoanForm = ({ onSubmitForm }: Props) => {
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log('Form is submitted');
-        console.log(depositValue)
-        console.log(purchagePrice)
         setDepositValueMessageVisibility(false);
         setPurchasePriceMessageVisibility(false);
-        if (isNaN(Number(depositValue))) {
-            console.log('Input value is not a number');
+        let invalidFormData = false;
+        if (isNaN(Number(depositValue)) || depositValue.trim() === "") {
             setDepositValueMessageVisibility(true);
+            invalidFormData = true;
         }
-        if (isNaN(Number(purchagePrice))) {
-            console.log('Input value is not a number');
+        if (isNaN(Number(purchagePrice)) || purchagePrice.trim() === "") {
             setPurchasePriceMessageVisibility(true);
+            invalidFormData = true;
         }
-        onSubmitForm(depositValue, purchagePrice);
+        if (!invalidFormData) onSubmitForm(depositValue, purchagePrice);
+
     }
     return (
         <div>
@@ -37,7 +35,7 @@ const LoanForm = ({ onSubmitForm }: Props) => {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='form-field'>
-                    <label htmlFor='depositValue'>Deposit Value</label>
+                    <label htmlFor='depositValue'>Deposit Value <span>*</span></label>
                     <input
                         type="text"
                         id="depositValue"
@@ -48,7 +46,7 @@ const LoanForm = ({ onSubmitForm }: Props) => {
                     <FormFieldMessage isVisible={displayDepositValueMessage}>Please enter a valid number</FormFieldMessage>
                 </div>
                 <div className='form-field'>
-                    <label htmlFor='purchasePrice'>Purchase Price</label>
+                    <label htmlFor='purchasePrice'>Purchase Price <span>*</span></label>
                     <input
                         type="text"
                         id="purchasePrice"
@@ -58,7 +56,6 @@ const LoanForm = ({ onSubmitForm }: Props) => {
                     />
                     <FormFieldMessage isVisible={displayPurchasePriceMessage}>Please enter a valid number</FormFieldMessage>
                 </div>
-
                 <button className='primary-button' type="submit">Submit</button>
             </form>
         </div>

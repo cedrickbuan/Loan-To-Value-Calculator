@@ -36,6 +36,10 @@
     label {
         font-size: 14px;
         color: $defaultFontColor;
+
+        span {
+            color: $red;
+        }
     }
 
     .form-field {
@@ -48,5 +52,14 @@
     }
 
 
+
+}
+
+@media only screen and (max-width: 600px) {
+    .loan-form-container {
+        font-family: $defaultFont;
+        padding: 20px;
+        width: unset;
+    }
 
 }

@@ -5,27 +5,21 @@ import LoanResult from '../Components/LoanResult';
 import LoanForm from '../Components/LoanForm';
 const Home = () => {
 
-    const [FormDepositValue, setFormDepositValue] = useState('');
-    const [FormPurchagePrice, setFormPurchagePrice] = useState('');
+    const [FormDepositValue, setFormDepositValue] = useState('0');
+    const [FormPurchagePrice, setFormPurchagePrice] = useState('0');
 
     const handleSubmitForm = (formDepositValue: string, formPurchaseValue: string) => {
-        console.log("this is received from Home:");
-        console.log(formDepositValue);
-        console.log(formPurchaseValue);
         setFormDepositValue(formDepositValue);
         setFormPurchagePrice(formPurchaseValue);
     }
-
 
     useEffect(() => {
         setFormDepositValue('0');
         setFormPurchagePrice('0');
     }, [])
 
-
     return (
         <div className='main-page'>
-
             <Header />
             <div className='loan-form-section'>
                 <div className='loan-form-container'>
